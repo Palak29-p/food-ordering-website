@@ -9,7 +9,7 @@
     </head>
     <body>
         <header>
-            <nav>
+            <nav class="navbar">
                 <div class="logo">
                     <i class="fa-solid fa-utensils"></i>
                     <h1>YummyGo</h1>
@@ -19,8 +19,9 @@
                     <li><a href=menu.html>Menu</a></li>
                     <li><a href=about.html>About</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="cart.html" id="cart-count">Cart(0)</a></li>
                     <li><a href="login.html">login</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
                 </ul>
             </nav>
         </header>
@@ -34,8 +35,9 @@
                 </p>
 
                 <div class="search-box">
-                    <input type="text" placeholder="Search your favourite food...">
-                    <button>Search</button></div>
+                    <input type="text" id="home-search" placeholder="Search your favourite food...">
+                    <button
+                    id="home-search-btn">Search</button></div>
                     <a href="menu.html" class="btn">Order Now</a>
                 </div>
         
@@ -112,7 +114,7 @@
             
             <div class="dish-container">
                 <div class="dish-card">
-                <div class="favourite">
+                <div class="wishlist">
                     <i class="fa-solid fa-heart"></i></div>
                 <img src="images/margherita-pizza.jpeg" alt="Margherita Pizza">
                 <div class="ratings">
@@ -123,7 +125,7 @@
                 </div>
 
                 <div class="dish-card">
-                <div class="favourite">
+                <div class="wishlist">
                     <i class="fa-solid fa-heart"></i></div>
                 <img src="images/white-sauce-pasta.jpeg" alt="Pasta">
                 <div class="ratings">
@@ -134,7 +136,7 @@
                 </div>
 
                 <div class="dish-card">
-                <div class="favourite">
+                <div class="wishlist">
                     <i class="fa-solid fa-heart"></i></div>                               
                 <img src="images/burger1.jpeg" alt="Chicken Burger">
                 <div class="ratings">
@@ -145,7 +147,7 @@
                 </div>
             
                 <div class="dish-card">
-                <div class="favourite">
+                <div class="wishlist">
                     <i class="fa-solid fa-heart"></i></div>
                 <img src="images/drinks.jpg" alt="cold-coffee">
                 <div class="ratings">
@@ -240,6 +242,6 @@
         <hr><p class="copyright">&copy; 2026 YummyGo.All Rights Reserved</p>
     </footer>
 
-
+    <script src="js/script.js"></script>
     </body>
 </html>

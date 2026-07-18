@@ -9,7 +9,7 @@
     </head>
     <body>
         <header>
-            <nav>
+            <nav class="navbar">
                 <div class="logo">
                     <i class="fa-solid fa-utensils"></i>
                     <h1>YummyGo</h1>
@@ -19,8 +19,9 @@
                     <li><a href=menu.html>Menu</a></li>
                     <li><a href=about.html>About</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="cart.html"id="cart-count">Cart(0)</a></li>
                     <li><a href="login.html">login</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
                 </ul>
             </nav>
         </header>    
@@ -29,7 +30,9 @@
             <p>Explore our delicious food made with fresh ingredients.</p>
             
             <div class="menu-search-box">
-                <input type="text" placeholder="Search your favourite food...">
+                <input type="text" 
+                id="search"
+                placeholder="Search your favourite food...">
                 <button>
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button> 
@@ -37,179 +40,427 @@
         </section>
 
         <section class="menu-category">
-            <button class="active">All</button>
-            <button>Pizza</button>
-            <button>Burger</button>
-            <button>Pasta</button>
-            <button>Chinese</button>
-            <button>Sweets</button>
-            <button>Drinks</button>
-            <button>Cakes</button>
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="pizza">Pizza</button>
+            <button class="filter-btn" data-category="burger">Burger</button>
+            <button class="filter-btn" data-category="pasta">Pasta</button>
+            <button class="filter-btn" data-category="chinese">Chinese</button>
+            <button class="filter-btn" data-category="sweets">Sweets</button>
+            <button class="filter-btn" data-category="drinks">Drinks</button>
+            <button class="filter-btn" data-category="cakes">Cakes</button>
+ 
         </section>
 
         <section class="menu-items">
+
+            <div class="menu-container">
             
-                <div class="menu-card">
-                    <img src="images/margherita-pizza.jpeg" alt="Pizza">
-                    <div class="ratings">
-                        <i class="fa-solid fa-star"></i>4.9
-                    </div>
-                    <h3>Margherita Pizza</h3>
-                    <p class="price">Rs.159</p>
-                    <button class="cart-btn">Add to cart</button>
+                <div class="menu-card"
+                data-category="pizza">
+                <div class="wishlist"
+                data-id="1"
+                data-name="Margherita Pizza"
+                data-price="159"
+                data-image="images/margherita-pizza.jpeg">
+                <i class="fa-regular fa-heart"></i>
+                </div>
+                <img src="images/margherita-pizza.jpeg" alt="Pizza">
+                <div class="ratings">
+                     <i class="fa-solid fa-star"></i>4.9
+                </div>
+                <h3>Margherita Pizza</h3>
+                <p class="price">Rs.159</p>
+                <button class="cart-btn"
+                data-id="1"
+                data-name="Margherita Pizza"
+                data-price="159"
+                data-image="images/margherita-pizza.jpeg"
+                >Add to cart</button>
                 </div>
 
-                <div class="menu-card">
+                <div class="menu-card"
+                data-category="pizza">
+                <div class="wishlist"
+                data-id="2"
+                data-name="Farmhouse Pizza"
+                data-price="249"
+                data-image="images/farm-house-pizza.jpeg">
+                <i class="fa-regular fa-heart"></i>
+                </div>
                     <img src="images/farm-house-pizza.jpeg" alt="Pizza">
                     <div class="ratings">
                         <i class="fa-solid fa-star"></i>4.8
                     </div>
-                    <h3>Farmhouse Pizza Pizza</h3>
+                    <h3>Farmhouse Pizza</h3>
                     <p class="price">Rs.249</p>
-                    <button class="cart-btn">Add to cart</button>
+                    <button class="cart-btn"
+                    data-id="2"
+                    data-name="Farmhouse Pizza"
+                    data-price="249"
+                    data-image="images/farm-house-pizza.jpeg"
+                    >Add to cart</button>
                 </div>
 
-                <div class="menu-card">
+                <div class="menu-card"
+                data-category="pizza">
+                <div class="wishlist"
+                data-id="3"
+                data-name="Veggie Supreme Pizza"
+                data-price="229"
+                data-image="images/veggie-supreme-pizza.jpeg">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
                     <img src="images/veggie-supreme-pizza.jpeg" alt="Pizza">
                     <div class="ratings">
                         <i class="fa-solid fa-star"></i>4.2
                     </div>
-                    <h3>Veggie Supreme</h3>
+                    <h3>Veggie Supreme Pizza</h3>
                     <p class="price">Rs.229</p>
-                    <button class="cart-btn">Add to cart</button>
+                    <button class="cart-btn"
+                    data-id="3"
+                    data-name="Veggie Supreme Pizza"
+                    data-price="229"
+                    data-image="images/veggie-supreme-pizza.jpeg"
+                    >Add to cart</button>
                 </div>
 
-                <div class="menu-card">
+                <div class="menu-card"
+                data-category="pizza">
+                <div class="wishlist"
+                data-id="4"
+                data-name="Cheese Burst Pizza"
+                data-price="279"
+                data-image="images/cheese-burst-pizza.jpeg">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
                     <img src="images/cheese-burst-pizza.jpeg" alt="Pizza">
                     <div class="ratings">
                         <i class="fa-solid fa-star"></i>4.5
                     </div>
                     <h3>Cheese Burst Pizza</h3>
                     <p class="price">Rs.279</p>
-                    <button class="cart-btn">Add to cart</button>
+                    <button class="cart-btn"
+                    data-id="4"
+                    data-name="Cheese Burst Pizza"
+                    data-price="279"
+                    data-image="images/cheese-burst-pizza.jpeg"
+                    >Add to cart</button>
                 </div>
 
-                <div class="menu-card">
+                <div class="menu-card"
+                data-category="burger">
+                <div class="wishlist"
+                data-id="5"
+                data-name="Chicken Burger"
+                data-price="129"
+                data-image="images/burger1.jpeg">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
                     <img src="images/burger1.jpeg" alt="Burger">
                     <div class="ratings">
                         <i class="fa-solid fa-star"></i>4.7
                     </div>
                     <h3>Chicken Burger</h3>
                     <p class="price">Rs.129</p>
-                    <button class="cart-btn">Add to cart</button>
+                    <button class="cart-btn"
+                    data-id="5"
+                    data-name="Chicken Burger"
+                    data-price="129"
+                    data-image="images/burger1.jpeg">Add to cart</button>
+
                 </div>
 
-                <div class="menu-card">
+                <div class="menu-card"
+                data-category="burger">
+                <div class="wishlist"
+                data-id="6"
+                data-name="Veg Burger"
+                data-price="99"
+                data-image="images/burger.jpg">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
                     <img src="images/burger.jpg" alt="Burger">
                     <div class="ratings">
                         <i class="fa-solid fa-star"></i>4.3
                     </div>
                     <h3>Veg Burger</h3>
                     <p class="price">Rs.99</p>
-                    <button class="cart-btn">Add to cart</button>
+                    <button class="cart-btn"
+                    data-id="6"
+                    data-name="Veg Burger"
+                    data-price="99"
+                    data-image="images/burger.jpg"
+                    >Add to cart</button>
                 </div>
 
-                <div class="menu-card">
+                <div class="menu-card"
+                data-category="burger">
+                <div class="wishlist"
+                data-id="7"
+                data-name="Cheese Burger"
+                data-price="179"
+                data-image="images/cheese-burger.jpeg">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
                     <img src="images/cheese-burger.jpeg" alt="Burger">
                     <div class="ratings">
                         <i class="fa-solid fa-star"></i>4.9
                     </div>
                     <h3>Cheese Burger</h3>
                     <p class="price">Rs.179</p>
-                    <button class="cart-btn">Add to cart</button>
+                    <button class="cart-btn"
+                    data-id="7"
+                    data-name="Cheese Burger"
+                    data-price="179"
+                    data-image="images/cheese-burger.jpeg"
+                    >Add to cart</button>
                 </div>
 
-                <div class="menu-card">
+                <div class="menu-card"
+                data-category="burger">
+                <div class="wishlist"
+                data-id="8"
+                    data-name="Crispy Burger"
+                    data-price="159"
+                    data-image="images/crispy-burger.jpeg">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
                     <img src="images/crispy-burger.jpeg" alt="Burger">
                     <div class="ratings">
                         <i class="fa-solid fa-star"></i>4.6
                     </div>
                     <h3>Crispy Burger</h3>
                     <p class="price">Rs.159</p>
-                    <button class="cart-btn">Add to cart</button>
+                    <button class="cart-btn"
+                    data-id="8"
+                    data-name="Crispy Burger"
+                    data-price="159"
+                    data-image="images/crispy-burger.jpeg"
+                    >Add to cart</button>
                 </div>
 
-                <div class="menu-card">
+                <div class="menu-card"
+                data-category="pasta">
+                <div class="wishlist"
+                data-id="9"
+                    data-name="White Sauce Pasta"
+                    data-price="149"
+                    data-image="images/white-sauce-pasta.jpeg">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
                     <img src="images/white-sauce-pasta.jpeg" alt="Pasta">
                     <div class="ratings">
                         <i class="fa-solid fa-star"></i>4.8
                     </div>
                     <h3>White Sauce Pasta</h3>
                     <p class="price">Rs.149</p>
-                    <button class="cart-btn">Add to cart</button>
+                    <button class="cart-btn"
+                    data-id="9"
+                    data-name="White Sauce Pasta"
+                    data-price="149"
+                    data-image="images/white-sauce-pasta.jpeg"
+                    >Add to cart</button>
                 </div>
 
-                <div class="menu-card">
+                <div class="menu-card"
+                data-category="pasta">
+                <div class="wishlist"
+                data-id="10"
+                    data-name="Red Sauce Pasta"
+                    data-price="149"
+                    data-image="images/red-sauce-pasta.jpeg">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
                     <img src="images/red-sauce-pasta.jpeg" alt="Pasta">
                     <div class="ratings">
                         <i class="fa-solid fa-star"></i>4.6
                     </div>
                     <h3>Red Sauce Pasta</h3>
                     <p class="price">Rs.149</p>
-                    <button class="cart-btn">Add to cart</button>
+                    <button class="cart-btn"
+                    data-id="10"
+                    data-name="Red Sauce Pasta"
+                    data-price="149"
+                    data-image="images/red-sauce-pasta.jpeg"
+                    >Add to cart</button>
                 </div>
 
-                <div class="menu-card">
+                <div class="menu-card"
+                data-category="pasta">
+                <div class="wishlist"
+                data-id="11"
+                    data-name="Mix Sauce Pasta"
+                    data-price="169"
+                    data-image="images/mix-sauce-pasta.jpeg">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
                     <img src="images/mix-sauce-pasta.jpeg" alt="Pasta">
                     <div class="ratings">
                         <i class="fa-solid fa-star"></i>4.5
                     </div>
                     <h3>Mix Sauce Pasta</h3>
                     <p class="price">Rs.169</p>
-                    <button class="cart-btn">Add to cart</button>
+                    <button class="cart-btn"
+                    data-id="11"
+                    data-name="Mix Sauce Pasta"
+                    data-price="169"
+                    data-image="images/mix-sauce-pasta.jpeg">Add to cart</button>
+
                 </div>
 
-                <div class="menu-card">
+                <div class="menu-card"
+                data-category="chinese">
+                <div class="wishlist"
+                data-id="12"
+                    data-name="Hakka Noodles"
+                    data-price="159"
+                    data-image="images/hakka-noodles.jpeg">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
                     <img src="images/hakka-noodles.jpeg" alt="Noodles">
                     <div class="ratings">
                         <i class="fa-solid fa-star"></i>4.8
                     </div>
                     <h3>Hakka Noodles</h3>
                     <p class="price">Rs.159</p>
-                    <button class="cart-btn">Add to cart</button>
+                    <button class="cart-btn"
+                    data-id="12"
+                    data-name="Hakka Noodles"
+                    data-price="159"
+                    data-image="images/hakka-noodles.jpeg"
+                    >Add to cart</button>
                 </div>
 
-                <div class="menu-card">
+                <div class="menu-card"
+                data-category="cakes">
+                <div class="wishlist"
+                    data-id="13"
+                    data-name="Chocolate Cake"
+                    data-price="299"
+                    data-image="images/chocolate-cake.jpeg">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
                     <img src="images/chocolate-cake.jpeg" alt="Cake">
                     <div class="ratings">
                         <i class="fa-solid fa-star"></i>4.9
                     </div>
                     <h3>Chocolate Cake</h3>
-                    <p class="price">Rs.199</p>
-                    <button class="cart-btn">Add to cart</button>
+                    <p class="price">Rs.299</p>
+                    <button class="cart-btn"
+                    data-id="13"
+                    data-name="Chocolate Cake"
+                    data-price="299"
+                    data-image="images/chocolate-cake.jpeg"
+                    >Add to cart</button>
                 </div>
 
-                <div class="menu-card">
+                <div class="menu-card"
+                data-category="drinks">
+                <div class="wishlist"
+                data-id="14"
+                    data-name="Cold Coffee"
+                    data-price="99"
+                    data-image="images/drinks.jpg">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
                     <img src="images/drinks.jpg" alt="Cold Coffee">
                     <div class="ratings">
                         <i class="fa-solid fa-star"></i>4.8
                     </div>
                     <h3>Cold Coffee</h3>
                     <p class="price">Rs.99</p>
-                    <button class="cart-btn">Add to cart</button>
+                    <button class="cart-btn"
+                    data-id="14"
+                    data-name="Cold Coffee"
+                    data-price="99"
+                    data-image="images/drinks.jpg"
+                    >Add to cart</button>
                 </div>
                 
-                <div class="menu-card">
+                <div class="menu-card"
+                data-category="sweets">
+                <div class="wishlist"
+                data-id="15"
+                    data-name="Donut"
+                    data-price="79"
+                    data-image="images/donut.jpeg">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
                     <img src="images/donut.jpeg" alt="Donut">
                     <div class="ratings">
                         <i class="fa-solid fa-star"></i>4.9
                     </div>
                     <h3>Donut</h3>
                     <p class="price">Rs.79</p>
-                    <button class="cart-btn">Add to cart</button>
+                    <button class="cart-btn"
+                    data-id="15"
+                    data-name="Donut"
+                    data-price="79"
+                    data-image="images/donut.jpeg"
+                    >Add to cart</button>
                 </div>
 
-                <div class="menu-card">
+                <div class="menu-card"
+                data-category="drinks">
+                <div class="wishlist"
+                data-id="16"
+                    data-name="Oreo Shake"
+                    data-price="149"
+                    data-image="images/oreo-shake.jpeg">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
                     <img src="images/oreo-shake.jpeg" alt="Oreo Shake">
                     <div class="ratings">
                         <i class="fa-solid fa-star"></i>4.7
                     </div>
                     <h3>Oreo Shake</h3>
                     <p class="price">Rs.149</p>
-                    <button class="cart-btn">Add to cart</button>
+                    <button class="cart-btn"
+                    data-id="16"
+                    data-name="Oreo Shake"
+                    data-price="149"
+                    data-image="images/oreo-shake.jpeg"
+                    >Add to cart</button>
                 </div>
+            </div>    
             
         </section>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-box">
+                <h2>YummyGo</h2>
+                <p>Delicious food delivered fresh to your doorstep with love and quality service</p>
+                </div>
+
+                <div  class="footer-box">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About</a>
+                <a href="Contact.html">Contact</a>
+                </div>
+
+                <div class="footer-box">
+                <h3>Contact Us</h3>
+                <p><i class="fa-solid fa-envelope"></i>YummyGo.gmail.com</p>
+                <p><i class="fa-solid fa-location-dot"></i>Jalandhar,Punjab</p>
+                </div>
+
+                <div class="footer-box">
+                <h3>Follow Us</h3>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <hr><p class="copyright">&copy; 2026 YummyGo.All Rights Reserved</p>
+        </footer>
+
+        <div id="toast"></div>
+
+        <script src="js/script.js"></script>
     </body> 
 </html>
- 
