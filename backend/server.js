@@ -10,7 +10,7 @@ const foodRoutes=require("./routes/foodRoutes");
 //use food routes
 app.use("/api/foods",foodRoutes);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
     res.send("Welcome to YummyGo Backend!");
