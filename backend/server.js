@@ -1,21 +1,30 @@
 const express = require("express");
+const path = require("path");
 
 const app = express();
 
 app.use(express.json());
 
-//import food routes
-const foodRoutes=require("./routes/foodRoutes");
+// Import food routes
+const foodRoutes = require("./routes/foodRoutes");
 
-//use food routes
-app.use("/api/foods",foodRoutes);
+// API routes
+app.use("/api/foods", foodRoutes);
+
+// Serve frontend
+app.use(express.static(path.join(__dirname, "../frontend")));
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/index.html"));
+});
+
+// For all other frontend routes
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/index.html"));
+});
 
 const PORT = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-    res.send("Welcome to YummyGo Backend!");
-});
-
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
