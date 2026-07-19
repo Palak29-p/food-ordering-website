@@ -18,8 +18,8 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend/index.html"));
 });
 
-// For all other frontend routes
-app.get("/*", (req, res) => {
+// For all other frontend routes (Express 5 compatible)
+app.use((req, res) => {
     res.sendFile(path.join(__dirname, "../frontend/index.html"));
 });
 
