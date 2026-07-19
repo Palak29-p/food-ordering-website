@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 });
 
 // For all other frontend routes
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend/index.html"));
 });
 
